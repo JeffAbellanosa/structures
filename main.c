@@ -28,7 +28,41 @@ int main(){
     while(queue->count != 0)
         printf("*%d -> %p*\n", dequeue(queue), queue->head->next);
 
-    
 
+    LinkedListptr ll = createLinkedList();
+
+    addToLL(ll, 0); // 0
+    addToLL(ll, 1); // 1 0
+    addToLL(ll, 2); // 2 1 0
+    addToLL(ll, 3); // 3 2 1 0
+    addToLL(ll, 4); // 4 3 2 1 0
+    addToLL(ll, 5); // 5 4 3 2 1 0
+    addToLL(ll, 6); // 6 5 4 3 2 1 0
+    addToLL(ll, 7); // 7 6 5 4 3 2 1 0
+
+    Nodeptr iterator;
+
+    iterator = ll->head;
+    printf("\nLL: ");
+    while(iterator != NULL){
+        printf("[%d] -> ", iterator->item);
+        iterator = iterator->next;
+    } printf("NULL\n");
+
+    printf("\nPOP Head, Index=4, Tail, Index=4, then Index=0: ");
+    printf("[%d]", popHeadLL(ll));
+    printf(" [%d]", popLLIndex(ll, 4));
+    printf(" [%d]", popTailLL(ll));
+    printf(" [%d]", popLLIndex(ll, 4));
+    printf(" [%d]\n", popLLIndex(ll, 0));
+
+    iterator = ll->head;
+    printf("\nLL: ");
+    while(iterator != NULL){
+        printf("[%d] -> ", iterator->item);
+        iterator = iterator->next;
+    } printf("NULL\n");
+    
+    getchar();
     return 0;
 }
