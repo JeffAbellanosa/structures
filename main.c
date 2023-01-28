@@ -4,17 +4,30 @@
 int main(){
     Stackptr stack = createStack();
 
-    printf("Thsi ran!");
-
     push(stack, 1);
     push(stack, 2);
     push(stack, 3);
     push(stack, 4);
 
-    while(stack->count != 0)
-        printf("*%d*\n", pop(stack));
+    printf("\nStack[%d]:\n", stack->count);
 
+    while(stack->count != 0){
+        printf("*%d -> %p*\n", pop(stack), stack->top->next);
+    }
+        
     
+    Queueptr queue = createQueue();
+
+    enqueue(queue, 1);
+    enqueue(queue, 2);
+    enqueue(queue, 3);
+    enqueue(queue, 4);
+
+    printf("\nQueue[%d]:\n", queue->count);
+
+    while(queue->count != 0)
+        printf("*%d -> %p*\n", dequeue(queue), queue->head->next);
+
     
 
     return 0;

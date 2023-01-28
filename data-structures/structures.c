@@ -1,6 +1,7 @@
 #include "Node.c"
 #include "Stack.c"
+#include "Queue.c"
 
-void printfff(){
-    printf("HEHEHEHEHE");
+void EvilLaugh(){
+    printf("MHWUHUHUEHEHEHEHEHEHEHEHE");
 }
