@@ -9,6 +9,7 @@ Stackptr createStack(){
 }
 
 void push(Stackptr stack, Item item){
+    if(stack == NULL) return;
     Nodeptr newNode = createNode(item);
     newNode->next = stack->top;
     stack->top = newNode;
@@ -17,7 +18,7 @@ void push(Stackptr stack, Item item){
 
 Item pop(Stackptr stack){
     Item item;
-    if(stack->count == 0) return item;
+    if( stack == NULL || stack->count == 0) return item;
     Nodeptr tempNode = stack->top;
     item = tempNode->item;
     stack->top = stack->top->next;
@@ -28,6 +29,6 @@ Item pop(Stackptr stack){
 
 Item peekStack(Stackptr stack){
     Item item;
-    if(stack->count == 0) return item;
+    if(stack == NULL || stack->count == 0) return item;
     return stack->top->item;
 }
